@@ -25,3 +25,12 @@ where name like '%Tennis%'
 /*Matching against multiple possible values*/
 select * from cd.facilities
 where facid IN ( '1','5')
+
+/*Classify results into buckets*/
+select name,
+       case
+           WHEN monthlymaintenance >100 then 'expensive'
+           else 'cheap'
+           END as cost,
+       facid
+from cd.facilities
