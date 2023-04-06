@@ -34,3 +34,8 @@ select name,
            END as cost,
        facid
 from cd.facilities
+
+/*Working with dates*/
+select memid, surname, firstname, joindate
+from cd.members
+where joindate >= '2012-09-01'
