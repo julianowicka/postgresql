@@ -5,3 +5,8 @@ SELECT * from cd.facilities
 /*Retrieve specific columns from a table*/
 
 select name, membercost from cd.facilities
+
+/*Control which rows are retrieved*/
+
+select * from cd.facilities where membercost > 0
+
