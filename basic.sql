@@ -10,3 +10,9 @@ select name, membercost from cd.facilities
 
 select * from cd.facilities where membercost > 0
 
+/*Control which rows are retrieved - part 2*/
+
+select facid, name, membercost, monthlymaintenance
+from cd.facilities
+where membercost < 1.0/50*(monthlymaintenance)
+  and membercost > 0
