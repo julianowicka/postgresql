@@ -27,6 +27,7 @@ select * from cd.facilities
 where facid IN ( '1','5')
 
 /*Classify results into buckets*/
+
 select name,
        case
            WHEN monthlymaintenance >100 then 'expensive'
@@ -36,6 +37,7 @@ select name,
 from cd.facilities
 
 /*Working with dates*/
+
 select memid, surname, firstname, joindate
 from cd.members
 where joindate >= '2012-09-01'
