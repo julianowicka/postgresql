@@ -21,3 +21,7 @@ where membercost < 1.0/50*(monthlymaintenance)
 
 select * from cd.facilities
 where name like '%Tennis%'
+
+/*Matching against multiple possible values*/
+select * from cd.facilities
+where facid IN ( '1','5')
