@@ -41,3 +41,8 @@ from cd.facilities
 select memid, surname, firstname, joindate
 from cd.members
 where joindate >= '2012-09-01'
+
+/*Removing duplicates, and ordering results*/
+
+select distinct surname from cd.members
+order by surname limit 10
