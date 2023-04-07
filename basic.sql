@@ -58,3 +58,9 @@ select name from cd.facilities
 select MIN(joindate) as oldest, MAX (joindate)
 as latest
 from cd.members
+
+/*More aggregation*/
+
+select firstname, surname, joindate
+from cd.members
+where joindate = (select MAX(joindate) from cd.members)
