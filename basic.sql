@@ -52,3 +52,9 @@ order by surname limit 10
 select surname from cd.members
 union
 select name from cd.facilities
+
+/*Simple aggregation*/
+
+select MIN(joindate) as oldest, MAX (joindate)
+as latest
+from cd.members
