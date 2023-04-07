@@ -46,3 +46,9 @@ where joindate >= '2012-09-01'
 
 select distinct surname from cd.members
 order by surname limit 10
+
+/*Combining results from multiple queries*/
+
+select surname from cd.members
+union
+select name from cd.facilities
