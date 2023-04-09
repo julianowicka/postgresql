@@ -67,3 +67,10 @@ and
 	cd.members.memid !=0 and slots*membercost > 30
 	))
 order by cost desc
+
+/*Produce a list of all members, along with their recommender, using no joins*/
+select distinct firstname || ' ' || surname as member, (
+  select firstname || ' ' || surname as recommender from cd.members b where m.recommendedby = b.memid
+)
+from cd.members m
+order by member asc, recommender asc
