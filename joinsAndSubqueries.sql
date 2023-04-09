@@ -19,3 +19,8 @@ starttime >= '2012-09-21 00:00:00'
 and
 starttime < '2012-09-22 00:00:00'
 
+/*Produce a list of all members who have recommended another member*/
+select distinct a.firstname, a.surname from cd.members a
+inner join cd.members b
+on a.memid = b.recommendedby
+order by a.surname, a.firstname
