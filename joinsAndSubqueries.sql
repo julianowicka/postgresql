@@ -42,3 +42,28 @@ on
 b.memid = m.memid
 where
 b.bookid=1
+
+/*Produce a list of costly bookings*/
+select
+firstname ||' ' || surname, name,
+case
+when cd.members.memid = 0 then slots*guestcost
+else slots*membercost
+end as cost
+from cd.bookings join cd.facilities
+on
+cd.bookings.facid=cd.facilities.facid
+join cd.members
+on
+cd.bookings.memid = cd.members.memid
+where
+starttime >= '2012-09-14 00:00:00'
+and
+starttime < '2012-09-15 00:00:00'
+and
+((
+  cd.members.memid = 0 and slots*guestcost > 30
+  )or(
+	cd.members.memid !=0 and slots*membercost > 30
+	))
+order by cost desc
